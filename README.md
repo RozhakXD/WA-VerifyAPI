@@ -41,15 +41,63 @@ WhatsLink telah di-hosting dan dapat diakses melalui URL berikut:
 
 [WhatsLink - Live Demo](https://www.whatslink.rozhak-dev.my.id/)
 
-## 🎨 Cuplikan Layar
-![WhatsLink Image](https://github.com/user-attachments/assets/45d7c9f3-feb6-4cf7-b344-18ae5cb4dd9d)
-
 ## 🧑‍💻 Cara Penggunaan
-
 1. Masukkan link grup WhatsApp di kolom yang disediakan.
 2. Klik tombol "**Cek Link**".
 3. Tunggu beberapa detik hingga aplikasi memproses link.
 4. Aplikasi akan menampilkan nama grup, gambar profil, atau pesan error jika link tidak valid.
+
+## 🎨 Cuplikan Layar
+![WhatsLink Image](https://github.com/user-attachments/assets/45d7c9f3-feb6-4cf7-b344-18ae5cb4dd9d)
+
+## 🧑‍💻 Cara Penggunaan API
+
+LinkScanWA menyediakan API untuk memvalidasi tautan grup WhatsApp. Berikut adalah contoh cara menggunakan API ini dalam Python:
+
+```python
+import requests
+import json
+
+def check_link_groups(link: str):
+    headers = {
+        "Content-Type": "application/json",
+    }
+    data = json.dumps(
+        {
+            "link": f"{link}"
+        }
+    )
+    response = requests.post("https://whatslink.rozhak-dev.my.id/api/v1/whatsapp/groups/", data=data, headers=headers)
+    json_response = json.loads(response.text)
+    print(json_response)
+
+check_link_groups(link="https://chat.whatsapp.com/EmhCiAJ2AGfHFaGB3yLKoB")
+```
+
+## API Request
+- Endpoint: `https://whatslink.rozhak-dev.my.id/api/v1/whatsapp/groups/`
+- Method: `POST`
+- Content-Type: `application/json`
+- Body:
+```json
+{
+    "link": "https://chat.whatsapp.com/EmhCiAJ2AGfHFaGB3yLKoB"
+}
+```
+
+## API Response (Contoh):
+```json
+{
+    "data": {
+        "groups_info": {
+            "group_name": "TERMUX INFORMATION 🦠🦠🦠",
+            "profile_picture": "https://pps.whatsapp.net/v/t61.24694-24/227200801_711308186856733_6650192014321848591_n.jpg?ccb=11-4&oh=01_Q5AaIDsSKCgXfwpvMf2j7WQLQ3oz4efPMEAopUIwkCCEiXDz&oe=671CC799&_nc_sid=5e03e0&_nc_cat=100"
+        },
+        "link": "https://chat.whatsapp.com/EmhCiAJ2AGfHFaGB3yLKoB"
+    },
+    "status": "success"
+}
+```
 
 ## ☕ Dukungan
 Jika Anda menyukai proyek ini dan ingin mendukung pengembangannya, Anda dapat memberi donasi di platform berikut:
