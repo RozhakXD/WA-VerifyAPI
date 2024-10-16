@@ -4,9 +4,9 @@
 **WhatsLink** adalah aplikasi web modern yang memungkinkan pengguna untuk memeriksa apakah tautan grup WhatsApp valid atau tidak. Dibangun menggunakan Flask di backend dan Tailwind CSS di frontend, aplikasi ini menghadirkan pengalaman pengguna yang responsif dan mudah digunakan.
 
 ## 🎯 Fitur
+- 🚀 **Responsif**: Desain responsif yang terlihat baik di perangkat mobile maupun desktop.
 - 🔗 **Validasi Link Grup WhatsApp**: Cek apakah sebuah link grup aktif dan dapat digunakan.
 - 🖼️ **Informasi Grup**: Menampilkan nama dan gambar profil grup (_jika tersedia_).
-- 🚀 **Responsif**: Desain responsif yang terlihat baik di perangkat mobile maupun desktop.
 - ⚡ **Proses Cepat**: Hasil validasi link dalam hitungan detik.
 
 ## 🛠️ Teknologi yang Digunakan
