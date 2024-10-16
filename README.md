@@ -79,11 +79,11 @@ check_link_groups(link="https://chat.whatsapp.com/EmhCiAJ2AGfHFaGB3yLKoB")
 - Method: `POST`
 - Content-Type: `application/json`
 - Body:
-```json
-{
-    "link": "https://chat.whatsapp.com/EmhCiAJ2AGfHFaGB3yLKoB"
-}
-```
+    ```json
+    {
+        "link": "https://chat.whatsapp.com/EmhCiAJ2AGfHFaGB3yLKoB"
+    }
+    ```
 
 ## API Response (Contoh):
 ```json
