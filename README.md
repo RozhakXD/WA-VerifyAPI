@@ -52,7 +52,7 @@ WhatsLink telah di-hosting dan dapat diakses melalui URL berikut:
 
 ## 🧑‍💻 Cara Penggunaan API
 
-LinkScanWA menyediakan API untuk memvalidasi tautan grup WhatsApp. Berikut adalah contoh cara menggunakan API ini dalam Python:
+WhatsLink menyediakan API untuk memvalidasi tautan grup WhatsApp. Berikut adalah contoh cara menggunakan API ini dalam Python:
 
 ```python
 import requests
@@ -105,7 +105,7 @@ Jika Anda menyukai proyek ini dan ingin mendukung pengembangannya, Anda dapat me
 - [Trakteer](https://trakteer.id/rozhak_official/tip) | [PayPal](https://paypal.me/rozhak9) | [Saweria](https://saweria.co/rozhak9)
 
 ## 💡 Kontribusi
-Ingin berkontribusi? Silakan fork repositori ini dan ajukan pull request dengan perubahan Anda. Setiap bantuan akan sangat dihargai!
+Jika Anda ingin berkontribusi, silakan lakukan fork pada repositori ini dan kirimkan pull request dengan perubahan atau penambahan fitur yang Anda usulkan. Kami sangat menghargai setiap kontribusi yang dapat membantu proyek ini berkembang lebih baik!
 
 ## 📝 Lisensi
 Proyek ini dilisensikan di bawah [MIT License](https://github.com/RozhakXD/WhatsLink/blob/main/LICENSE).
