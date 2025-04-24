@@ -1,111 +1,81 @@
-# 🌐 WhatsLink - WhatsApp Group Link Validator
-![WhatsLink](https://github.com/user-attachments/assets/56ec0346-98f4-4beb-b648-432e37370da1)
+# **🌟 WA-VerifyAPI - Your Smart Solution for WhatsApp Group Link Validation!**  
 
-**WhatsLink** adalah aplikasi web modern yang memungkinkan pengguna untuk memeriksa apakah tautan grup WhatsApp valid atau tidak. Dibangun menggunakan Flask di backend dan Tailwind CSS di frontend, aplikasi ini menghadirkan pengalaman pengguna yang responsif dan mudah digunakan.
+🔗 **Welcome to WA-VerifyAPI!** A modern Flask-based API designed to effortlessly validate WhatsApp group links. With this cutting-edge technology, you can quickly extract group information and verify activity status. 🚀
 
-## 🎯 Fitur
-- 🚀 **Responsif**: Desain responsif yang terlihat baik di perangkat mobile maupun desktop.
-- 🔗 **Validasi Link Grup WhatsApp**: Cek apakah sebuah link grup aktif dan dapat digunakan.
-- 🖼️ **Informasi Grup**: Menampilkan nama dan gambar profil grup (_jika tersedia_).
-- ⚡ **Proses Cepat**: Hasil validasi link dalam hitungan detik.
+✨ **Why choose WA-VerifyAPI?** Because we provide an efficient and reliable solution for your communication needs. Whether you're a developer looking to enhance your application or simply want to ensure the links you share are valid, we’ve got you covered! Join us and elevate your WhatsApp experience today! 🌈
 
-## 🛠️ Teknologi yang Digunakan
+## **✨ Features**  
+✅ **Group Info Extraction** – Retrieve group name & profile picture (if available)  
+✅ **Error Handling** – Detect expired, invalid, or fake links  
+✅ **Fast & Scalable** – Built with **Flask** & **aiohttp** for async HTTP requests  
+✅ **Link Validation** – Check if a WhatsApp group link is valid and active  
+✅ **Modern API Standards** – Clean JSON responses with proper HTTP status codes 
 
-- **Frontend**: HTML5, Tailwind CSS
-- **Async**: Memanfaatkan `async` untuk pengecekan link yang lebih cepat
-- **Backend**: Python (Flask)
-- **Hosting**: AnymHost
+## **🚀 Quick Start**
+### **Prerequisites**
+- Python 3.10+
+- `pip` (Python package manager)
 
-## 📦 Instalasi Lokal
-Jika Anda ingin menjalankan proyek ini secara lokal, ikuti langkah-langkah berikut:
-1. **Clone repositori ini**:
-    ```bash
-    git clone https://github.com/RozhakXD/WhatsLink.git
-    cd WhatsLink
-    ```
-2. **Buat environment virtual dan instal dependensi**:
-    ```bash
-    python -m venv venv
-    source venv/bin/activate  # Untuk pengguna Windows: venv\Scripts\activate
-    pip install -r requirements.txt
-    ```
-3. **Jalankan aplikasi**:
-    ```bash
-    flask run
-    ```
-4. **Buka di browser**:  
-   Akses aplikasi di `http://127.0.0.1:5000`
+### **Installation**
+1. Clone the repo:  
+   ```sh
+   git clone https://github.com/RozhakXD/WA-VerifyAPI.git
+   cd WA-VerifyAPI
+   ```
 
-## 🚀 Deployment
-WhatsLink telah di-hosting dan dapat diakses melalui URL berikut:
+2. Install dependencies:  
+   ```sh
+   pip install -r requirements.txt
+   ```  
 
-[WhatsLink - Live Demo](https://www.whatslink.rozhak-dev.my.id/)
+3. Run the API:  
+   ```sh
+   python run.py
+   ```  
 
-## 🧑‍💻 Cara Penggunaan
-1. Masukkan link grup WhatsApp di kolom yang disediakan.
-2. Klik tombol "**Cek Link**".
-3. Tunggu beberapa detik hingga aplikasi memproses link.
-4. Aplikasi akan menampilkan nama grup, gambar profil, atau pesan error jika link tidak valid.
+   The API will start at `http://localhost:5000`.
 
-## 🎨 Cuplikan Layar
-![WhatsLink Image](https://github.com/user-attachments/assets/45d7c9f3-feb6-4cf7-b344-18ae5cb4dd9d)
+## **🌐 API Endpoints**
+### **🔍 Validate a WhatsApp Group Link**
+**`POST /api/validate`**
+Check if a WhatsApp group link is valid and fetch group details.
 
-## 🧑‍💻 Cara Penggunaan API
-
-WhatsLink menyediakan API untuk memvalidasi tautan grup WhatsApp. Berikut adalah contoh cara menggunakan API ini dalam Python:
-
-```python
-import requests
-import json
-
-def check_link_groups(link: str):
-    headers = {
-        "Content-Type": "application/json",
-    }
-    data = json.dumps(
-        {
-            "link": f"{link}"
-        }
-    )
-    response = requests.post("https://whatslink.rozhak-dev.my.id/api/v1/whatsapp/groups/", data=data, headers=headers)
-    json_response = json.loads(response.text)
-    print(json_response)
-
-check_link_groups(link="https://chat.whatsapp.com/EmhCiAJ2AGfHFaGB3yLKoB")
-```
-
-## API Request
-- Endpoint: `https://whatslink.rozhak-dev.my.id/api/v1/whatsapp/groups/`
-- Method: `POST`
-- Content-Type: `application/json`
-- Body:
-    ```json
-    {
-        "link": "https://chat.whatsapp.com/EmhCiAJ2AGfHFaGB3yLKoB"
-    }
-    ```
-
-## API Response (Contoh):
+#### **Request**
 ```json
 {
-    "data": {
-        "groups_info": {
-            "group_name": "TERMUX INFORMATION 🦠🦠🦠",
-            "profile_picture": "https://pps.whatsapp.net/v/t61.24694-24/227200801_711308186856733_6650192014321848591_n.jpg?ccb=11-4&oh=01_Q5AaIDsSKCgXfwpvMf2j7WQLQ3oz4efPMEAopUIwkCCEiXDz&oe=671CC799&_nc_sid=5e03e0&_nc_cat=100"
-        },
-        "link": "https://chat.whatsapp.com/EmhCiAJ2AGfHFaGB3yLKoB"
-    },
-    "status": "success"
+    "link": "https://chat.whatsapp.com/EXAMPLE123"
 }
+```  
+
+#### **Successful Response**
+```json
+{
+    "status": "success",
+    "data": {
+        "link": "https://chat.whatsapp.com/EXAMPLE123",
+        "groups_info": {
+            "profile_picture": "https://pps.whatsapp.net/v/EXAMPLE_IMG",
+            "group_name": "Awesome Tech Group"
+        }
+    }
+}
+```  
+
+#### **Error Responses**
+| Status | Description | Example Response |
+|--------|-------------|------------------|
+| `400` | Invalid URL format | `{"status": "error", "message": "Invalid WhatsApp group link"}` |
+| `404` | Group not found/inactive | `{"status": "error", "message": "WhatsApp group is not active"}` |
+
+## **🧪 Running Tests**
+```sh
+pytest tests/
 ```
 
-## ☕ Dukungan
-Jika Anda menyukai proyek ini dan ingin mendukung pengembangannya, Anda dapat memberi donasi di platform berikut:
+## ☕ Support
+If you love this project and want to support its development, you can make a donation on the following platforms:
 
-- [Trakteer](https://trakteer.id/rozhak_official/tip) | [PayPal](https://paypal.me/rozhak9) | [Saweria](https://saweria.co/rozhak9)
+[Trakteer](https://trakteer.id/rozhak_official/tip) | [PayPal](https://paypal.me/rozhak9) | [Saweria](https://saweria.co/rozhak9)
 
-## 💡 Kontribusi
-Jika Anda ingin berkontribusi, silakan lakukan fork pada repositori ini dan kirimkan pull request dengan perubahan atau penambahan fitur yang Anda usulkan. Kami sangat menghargai setiap kontribusi yang dapat membantu proyek ini berkembang lebih baik!
-
-## 📝 Lisensi
-Proyek ini dilisensikan di bawah [MIT License](https://github.com/RozhakXD/WhatsLink/blob/main/LICENSE).
+## **📜 License**
+This project is licensed under **MIT License**.
